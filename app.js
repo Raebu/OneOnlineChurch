@@ -1,6 +1,6 @@
 "use strict";
 const listings=[]; // No fictitious churches or livestreams. Populate only after explicit verification.
-const search=document.getElementById("search");
+if(typeof document!=="undefined") {\nconst search=document.getElementById("search");
 const language=document.getElementById("language");
 const tradition=document.getElementById("tradition");
 const format=document.getElementById("format");
@@ -22,4 +22,4 @@ toggle.addEventListener("click",()=>{const isOpen=toggle.getAttribute("aria-expa
 mobile.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mobile.hidden=true;toggle.setAttribute("aria-expanded","false")}));
 document.getElementById("year").textContent=new Date().getFullYear();
 render();
-if(typeof module!=="undefined")module.exports={filterListings};
+}\nif(typeof module!=="undefined")module.exports={filterListings};
