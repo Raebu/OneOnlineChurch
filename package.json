@@ -1,0 +1,14 @@
+{
+  "name": "oneonlinechurch",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Verified church discovery foundation",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check app.js && npm test",
+    "start": "npx serve . -l 4173"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
