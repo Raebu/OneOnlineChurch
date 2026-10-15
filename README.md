@@ -6,7 +6,7 @@ A global church discovery and community project. This repository now includes an
 
 ## Cloudflare Workers deployment
 
-Static assets are served **only** from `./public/`. Wrangler uses the checked-in `wrangler.jsonc`, so neither `node_modules/`, project documents, tests nor environment files can be published accidentally.
+Static assets are served **only** from `./public/`. The transparent globe logo and cinematic Earth hero are real optimised images committed under `public/assets/`. Wrangler uses the checked-in `wrangler.jsonc`, so neither `node_modules/`, project documents, tests nor environment files can be published accidentally.
 
 - **Build command:** `npm run build` (checks public files; no compilation required).
 - **Deploy command:** `npx wrangler deploy` (or `npm run deploy`).
