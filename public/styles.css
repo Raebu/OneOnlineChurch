@@ -150,3 +150,116 @@
 @media(max-width:680px){.ooc-header-inner{padding-inline:14px}.ooc-brand img{height:31px;width:31px}.ooc-brand{font-size:1.04rem}.ooc-top-search{display:none}.ooc-signin{height:34px;padding:0 12px}.ooc-hero-inner{grid-template-columns:1fr;min-height:0;padding:44px 23px 67px;gap:25px}.ooc-hero{min-height:0}.ooc-hero::before{background-image:linear-gradient(180deg,#020b1aeb 0%,#020b1ad3 49%,#020b1a75 100%),url("./assets/earth-sunrise.webp");background-position:center,58% bottom}.ooc-hero-copy h1{font-size:clamp(3rem,9.5vw,4.7rem)}.ooc-hero-copy>p{font-size:.96rem}.ooc-hero-identity{margin:0 auto}.ooc-hero-identity img{width:min(61vw,260px)}.ooc-wordmark{font-size:clamp(1.65rem,7vw,2.5rem)}.ooc-hero-stats{gap:12px}.ooc-discover{padding-inline:12px}.ooc-discovery-card{grid-template-columns:1fr;margin-top:-15px}.ooc-discovery-content{padding:20px 18px}.ooc-discovery-content h2{font-size:clamp(1.8rem,6.2vw,2.7rem)}.ooc-promo{min-height:150px;padding:18px 25px;flex-direction:row;align-items:center}.ooc-promo p{margin:0;width:auto}.ooc-promo-script{font-size:1.6rem}.ooc-discovery-form{grid-template-columns:1fr}.ooc-search-button{width:100%}.ooc-main-search{width:100%}}
 @media(max-width:380px){.ooc-brand{font-size:.87rem}.ooc-menu{padding:6px}.ooc-discovery-content{padding-inline:13px}.ooc-filter-pills button{padding:0 11px}}
 @media(prefers-reduced-motion:reduce){.ooc-hero *,.ooc-discovery-card *{animation:none!important;transition:none!important}}
+
+
+/*
+ * Reference fidelity pass (15 Oct): keep the first screen edge-to-edge.
+ * Prior design centering max-widths were responsible for the wide empty
+ * gutters, elevated Earth horizon and undersized right-hand brand identity.
+ * Intentionally scoped to the OneOnlineChurch header/hero/discovery only.
+ */
+@media (min-width:941px) {
+  .ooc-header-inner{
+    max-width:none;
+    width:100%;
+    margin:0;
+    padding-inline:clamp(20px,2.55vw,52px);
+  }
+  .ooc-nav{gap:clamp(13px,1.45vw,29px)}
+  .ooc-top-search{width:clamp(185px,21vw,410px)}
+  .ooc-hero,
+  .ooc-hero-inner{min-height:clamp(470px,42vw,660px)}
+  .ooc-hero-inner{
+    max-width:none;
+    width:100%;
+    margin:0;
+    padding:clamp(28px,3vw,52px) clamp(35px,5.95vw,114px) clamp(46px,5vw,83px);
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:clamp(18px,3.7vw,75px);
+  }
+  .ooc-hero-copy{max-width:min(100%,650px)}
+  .ooc-hero-copy h1{
+    font-size:clamp(3.1rem,5.85vw,6.5rem);
+    line-height:1.025;
+  }
+  .ooc-hero-copy>p{
+    max-width:480px;
+    font-size:clamp(.95rem,1.18vw,1.2rem);
+    line-height:1.52;
+  }
+  .ooc-hero-cta{margin-top:22px;gap:13px}
+  .ooc-primary,.ooc-outline{min-height:49px}
+  .ooc-hero-stats{margin-top:23px;gap:clamp(15px,2.35vw,42px)}
+  .ooc-hero-identity{margin-bottom:0;justify-self:center;align-self:center}
+  .ooc-hero-identity img{
+    width:clamp(205px,24vw,460px);
+    max-width:100%;
+    margin-bottom:-10px;
+  }
+  .ooc-wordmark{
+    font-size:clamp(2rem,3.8vw,4.18rem);
+    line-height:1.05;
+  }
+  .ooc-wordmark-caption{font-size:clamp(.61rem,.75vw,.87rem)}
+  .ooc-wordmark-caption-small{font-size:clamp(.52rem,.63vw,.74rem)}
+  /* Keeping the image anchored at the TOP leaves the sunrise
+     near the bottom of the hero instead of behind the title. */
+  .ooc-hero::before{
+    background-image:
+      linear-gradient(90deg,rgba(2,9,24,.99) 0%,rgba(2,9,24,.87) 30%,rgba(2,9,24,.22) 66%,rgba(2,9,24,.07) 100%),
+      url("./assets/earth-sunrise.webp");
+    background-position:center top,center top;
+    background-size:cover,cover;
+  }
+  .ooc-hero::after{
+    background:
+      linear-gradient(0deg,rgba(3,13,30,.57),transparent 14%),
+      radial-gradient(ellipse at 74% 23%,rgba(33,78,165,.08),transparent 48%);
+  }
+  .ooc-discover{padding-inline:clamp(17px,2.9vw,57px);padding-bottom:16px}
+  .ooc-discovery-card{
+    max-width:none;
+    width:100%;
+    margin:-15px auto 0;
+    grid-template-columns:minmax(0,1fr) minmax(205px,17.5%);
+    border-radius:15px;
+  }
+  .ooc-discovery-content{
+    padding:clamp(20px,2.25vw,34px) clamp(24px,2.7vw,53px) 20px;
+  }
+  .ooc-discovery-content h2{
+    font-size:clamp(1.85rem,2.85vw,3.45rem);
+    white-space:normal;
+  }
+  .ooc-discovery-form{
+    max-width:none;
+    grid-template-columns:minmax(0,1fr) auto;
+  }
+  .ooc-discover-subtitle{margin:7px 0 14px}
+  .ooc-promo{min-height:208px}
+  .ooc-more{padding-top:95px}
+}
+/* Match the reference's compact original proportions near 941px. */
+@media (min-width:941px) and (max-width:1199px){
+  .ooc-hero,.ooc-hero-inner{min-height:465px}
+  .ooc-hero-inner{padding-top:24px;padding-bottom:55px;gap:22px}
+  .ooc-hero-identity img{width:clamp(205px,24vw,270px)}
+  .ooc-wordmark{font-size:clamp(2rem,3.65vw,2.6rem)}
+  .ooc-hero-copy h1{font-size:clamp(3.1rem,5.65vw,4.5rem)}
+  .ooc-discovery-content h2{font-size:clamp(1.75rem,3vw,2.5rem)}
+  .ooc-discovery-card{grid-template-columns:minmax(0,1fr) 17.5%}
+  .ooc-promo{padding-inline:12px}
+  .ooc-promo p{font-size:.69rem}
+  .ooc-promo-script{font-size:1.55rem}
+  .ooc-header-inner{gap:10px}
+  .ooc-top-search{width:clamp(155px,20vw,220px)}
+  .ooc-nav{gap:12px}
+}
+/* Avoid the large stark-white strip appearing immediately below the
+   reference-matched dark first screen on tall desktop viewports. */
+@media (min-width:1200px) {
+  .ooc-more{
+    background:linear-gradient(to bottom,#030e1e 0 86px,var(--ivory) 86px 100%);
+    padding-top:126px;
+  }
+}
