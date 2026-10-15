@@ -65,3 +65,88 @@
 @media(max-width:700px){
  .branded-hero{background-image:linear-gradient(180deg,rgba(3,11,24,.94) 0%,rgba(3,11,24,.84) 50%,rgba(3,11,24,.46) 100%),url("./assets/earth-sunrise.webp");background-position:center,55% bottom}
 }
+
+
+/* Reference-matched OneOnlineChurch first screen — lower sections unchanged */
+:root{--ooc-blue:#299aff;--ooc-dark:#030d1c}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+[hidden]{display:none!important}
+.ooc-header{background:#030d1b;color:#fff;position:relative;z-index:30;border-bottom:1px solid #26406466}
+.ooc-header-inner{max-width:1380px;margin:auto;padding:0 clamp(15px,2.5vw,38px);height:68px;display:flex;align-items:center;gap:clamp(9px,1.8vw,27px)}
+.ooc-brand{color:#31b2ff;text-decoration:none;display:flex;align-items:center;gap:7px;font-size:clamp(1rem,1.5vw,1.4rem);font-weight:800;letter-spacing:-.055em;white-space:nowrap;flex:none}
+.ooc-brand img{width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 0 4px #1673ff50)}
+.ooc-nav{display:flex;align-items:center;gap:clamp(12px,1.4vw,25px);flex:1;justify-content:center}
+.ooc-nav a{font-size:clamp(.7rem,.89vw,.87rem);font-weight:550;text-decoration:none;color:#f2f7ff;white-space:nowrap}
+.ooc-nav a:hover{color:#50b9ff}
+.ooc-header-actions{display:flex;align-items:center;gap:11px}
+.ooc-top-search{display:flex;align-items:center;gap:8px;height:37px;min-width:0;width:clamp(175px,21vw,302px);background:#101e33;border:1px solid #355070;border-radius:999px;padding:0 13px;color:#b2c4df}
+.ooc-top-search:focus-within,.ooc-main-search:focus-within{outline:2px solid #67c6ff;outline-offset:2px}
+.ooc-top-search input,.ooc-main-search input{border:0;outline:0;background:transparent;color:white;min-width:0;flex:1;width:100%;font-size:.79rem}
+.ooc-top-search input::placeholder,.ooc-main-search input::placeholder{color:#a8b6ce;opacity:1}
+.ooc-search-icon{font-size:25px;line-height:1;color:#d7e5f7;transform:rotate(-19deg);display:inline-block;flex:none}
+.ooc-signin{background:linear-gradient(180deg,#2d8dff,#2365ff);color:white;border:0;border-radius:99px;padding:0 20px;height:38px;white-space:nowrap;font-size:.83rem;font-weight:700;box-shadow:0 6px 19px #135be451}
+.ooc-menu{display:none!important;color:#fff}
+.ooc-header a:focus-visible,.ooc-header button:focus-visible,.ooc-discover button:focus-visible,.ooc-hero a:focus-visible,.ooc-discover select:focus-visible{outline:3px solid #80cfff;outline-offset:3px}
+.ooc-dialog{background:#071a2d;color:#fff;border:1px solid #476e9d;border-radius:18px;padding:36px;max-width:min(92vw,450px);box-shadow:0 20px 90px #000a}
+.ooc-dialog::backdrop{background:#020817c9}
+.ooc-dialog h2{font-size:1.8rem;letter-spacing:-.03em}
+.ooc-dialog p{color:#d2e4f5}
+.ooc-dialog-close{position:absolute;right:13px;top:8px;border:0;color:#e0edff;background:transparent;font-size:2rem}
+.ooc-hero{position:relative;isolation:isolate;overflow:hidden;background:#030b1a;color:#fff;min-height:545px}
+.ooc-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#020b1af7 0%,#020b1ad9 27%,#020b1a77 55%,#020b1a22 100%),url("./assets/earth-sunrise.webp") center 60%/cover no-repeat;z-index:-2}
+.ooc-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 74% 14%,#2448a71a,transparent 43%),linear-gradient(0deg,#05152bc4,transparent 22%);z-index:-1;pointer-events:none}
+.ooc-hero-inner{max-width:1380px;min-height:545px;margin:auto;padding:35px clamp(25px,5.8vw,82px) 70px;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(18px,5vw,80px);align-items:center}
+.ooc-hero-copy{max-width:610px;z-index:1}
+.ooc-hero-copy h1{color:#fff;font-size:clamp(3.25rem,6.15vw,6.1rem);line-height:1.015;letter-spacing:-.059em;font-weight:800;white-space:normal;margin:0}
+.ooc-hero-copy h1 span{color:#31a9ff;background:linear-gradient(105deg,#57d7ff 0%,#2494ff 52%,#2780ff 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ooc-hero-copy h1 strong{font-weight:380;letter-spacing:-.06em}
+.ooc-hero-copy>p{color:#e6f0fc;line-height:1.55;font-size:clamp(.95rem,1.18vw,1.15rem);max-width:495px;margin:15px 0 0}
+.ooc-hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:25px;align-items:center}
+.ooc-primary,.ooc-outline{display:inline-flex;align-items:center;justify-content:center;gap:13px;min-height:50px;padding:0 22px;border-radius:999px;font-size:.9rem;font-weight:700;text-decoration:none}
+.ooc-primary{background:linear-gradient(180deg,#3192ff,#2465ff);color:#fff;box-shadow:0 6px 26px #1269f947}
+.ooc-outline{border:1px solid #83a1c6a0;background:#0b1c2f99;color:#fff;backdrop-filter:blur(7px)}
+.ooc-play{height:24px;width:24px;border:1px solid #8dabc2;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:1rem}
+.ooc-hero-stats{display:flex;gap:clamp(13px,2.6vw,34px);align-items:center;margin-top:26px;flex-wrap:wrap}
+.ooc-hero-stats>div{display:flex;align-items:center;gap:7px}
+.ooc-hero-stats p{margin:0;line-height:1.1}
+.ooc-hero-stats strong,.ooc-hero-stats small{display:block;white-space:nowrap}
+.ooc-hero-stats strong{font-size:.78rem;color:#fff}
+.ooc-hero-stats small{font-size:.67rem;color:#c8d6ea;margin-top:4px}
+.ooc-stat-icon{font-size:24px;color:#67b6ff;line-height:1;text-shadow:0 0 8px #2383ff75}
+.ooc-hero-identity{text-align:center;justify-self:center;align-self:center;z-index:1;margin-bottom:13px;min-width:0}
+.ooc-hero-identity img{display:block;width:clamp(200px,28vw,350px);max-width:100%;height:auto;margin:0 auto -12px;filter:drop-shadow(0 7px 30px #0555b883)}
+.ooc-wordmark{font-weight:850;color:#27a9ff;letter-spacing:-.069em;line-height:1.09;font-size:clamp(1.65rem,3vw,2.9rem);text-shadow:0 5px 18px #0007;white-space:nowrap}
+.ooc-wordmark-caption{display:block;color:#e5f0ff;font-weight:600;letter-spacing:.32em;font-size:clamp(.55rem,.78vw,.72rem);margin-top:7px}
+.ooc-wordmark-caption-small{font-size:clamp(.48rem,.66vw,.66rem);margin-top:5px;letter-spacing:.42em}
+.ooc-discover{background:#030e1e;padding:0 clamp(15px,2.8vw,35px) 12px;position:relative;z-index:3}
+.ooc-discovery-card{position:relative;max-width:1330px;margin:-20px auto 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(205px,26%);border:1px solid #355778a3;border-radius:16px;overflow:hidden;background:#07182b;box-shadow:0 14px 40px #0007}
+.ooc-discovery-content{min-width:0;padding:clamp(20px,2.25vw,32px) clamp(20px,3.2vw,45px) 20px}
+.ooc-discovery-content h2{font-size:clamp(1.7rem,3.1vw,3.15rem);font-weight:780;letter-spacing:-.05em;color:#fff;line-height:1.13;margin:0}
+.ooc-discovery-content h2 span{color:#31aaff}
+.ooc-discover-subtitle{color:#cbd9eb;font-size:clamp(.8rem,1.05vw,1rem);margin:6px 0 14px}
+.ooc-discovery-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;max-width:840px;margin-bottom:14px}
+.ooc-main-search{display:flex;gap:9px;align-items:center;height:47px;min-width:0;padding:0 15px;background:#0e2036;border:1px solid #466388;border-radius:999px;color:#deeaff}
+.ooc-main-search input{font-size:.85rem}
+.ooc-search-button{height:47px;min-width:133px;background:linear-gradient(180deg,#3293ff,#225fff);color:#fff;border:0;border-radius:999px;font-size:.86rem;font-weight:700;display:flex;gap:15px;align-items:center;justify-content:center;box-shadow:0 6px 17px #196df444}
+.ooc-filter-pills{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ooc-filter-pills button{height:36px;padding:0 17px;background:#0b1d32;border:1px solid #355070;border-radius:999px;color:#dce9f8;font-size:.78rem;font-weight:500;white-space:nowrap}
+.ooc-filter-pills button.active,.ooc-filter-pills button[aria-pressed="true"]{background:linear-gradient(180deg,#308eff,#1a60fb);border-color:#2b8aff;color:#fff}
+.ooc-filter-pills .ooc-dropdown-chip[aria-expanded="true"]{border-color:#65b6ff;color:#fff}
+.ooc-filter-panel{margin-top:13px;border:1px solid #3b5579;padding:14px;border-radius:11px;background:#0c233a}
+.ooc-filter-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ooc-filter-fields label{font-size:.71rem;display:grid;gap:5px;color:#cfdef1}
+.ooc-filter-fields select{max-width:100%;background:#142f48;color:#fff;border:1px solid #5b799c;border-radius:7px;padding:8px}
+.ooc-reset-filters{background:transparent;border:0;color:#b4dcff;text-decoration:underline;font-size:.76rem;margin-top:9px}
+.ooc-results{margin-top:12px;padding:10px 12px;border:1px solid #43618b;border-radius:7px;color:#d3e8ff;font-size:.8rem}
+.ooc-promo{position:relative;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;align-items:end;padding:23px 23px 18px;background:linear-gradient(90deg,#152c4e25,#100f31a0),url("./assets/discover-mountains.svg") center/cover no-repeat;color:#fff}
+.ooc-promo::before{position:absolute;inset:0;content:"";background:linear-gradient(0deg,#060b1fe0,transparent 64%);pointer-events:none}
+.ooc-promo-script,.ooc-promo p{position:relative;z-index:1}
+.ooc-promo-script{text-align:center;transform:rotate(-11deg);font-family:"Segoe Script","Brush Script MT",cursive;font-size:clamp(1.5rem,2.4vw,2.4rem);font-style:italic;line-height:.91;font-weight:500;color:#fff;text-shadow:0 2px 8px #15213d}
+.ooc-promo p{font-size:.83rem;line-height:1.4;max-width:205px;width:100%;margin:30px 0 0;color:#e4edff;text-shadow:0 1px 4px #000}
+.ooc-more{background:var(--ivory);max-width:none}
+.ooc-more>.path-grid{max-width:1330px;margin:0 auto}
+@media(max-width:1050px){.ooc-header-inner{gap:10px}.ooc-header-actions{gap:8px}.ooc-top-search{width:clamp(155px,18vw,235px)}.ooc-nav{gap:12px}.ooc-hero-inner{padding-inline:32px}.ooc-hero-identity img{width:clamp(190px,26vw,300px)}}
+@media(max-width:940px){.ooc-header-inner{height:65px}.ooc-nav{display:none}.ooc-menu{display:block!important;margin-left:0}.ooc-header-actions{margin-left:auto}.ooc-top-search{width:min(37vw,320px)}.ooc-hero-inner{grid-template-columns:1fr .85fr;gap:12px;min-height:495px;padding:30px 24px 52px}.ooc-hero{min-height:495px}.ooc-hero-copy h1{font-size:clamp(2.75rem,6.4vw,4.7rem)}.ooc-hero-identity img{width:clamp(170px,28vw,260px)}.ooc-discovery-card{grid-template-columns:1fr 28%}.ooc-filter-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.ooc-header-inner{padding-inline:14px}.ooc-brand img{height:31px;width:31px}.ooc-brand{font-size:1.04rem}.ooc-top-search{display:none}.ooc-signin{height:34px;padding:0 12px}.ooc-hero-inner{grid-template-columns:1fr;min-height:0;padding:44px 23px 67px;gap:25px}.ooc-hero{min-height:0}.ooc-hero::before{background-image:linear-gradient(180deg,#020b1aeb 0%,#020b1ad3 49%,#020b1a75 100%),url("./assets/earth-sunrise.webp");background-position:center,58% bottom}.ooc-hero-copy h1{font-size:clamp(3rem,9.5vw,4.7rem)}.ooc-hero-copy>p{font-size:.96rem}.ooc-hero-identity{margin:0 auto}.ooc-hero-identity img{width:min(61vw,260px)}.ooc-wordmark{font-size:clamp(1.65rem,7vw,2.5rem)}.ooc-hero-stats{gap:12px}.ooc-discover{padding-inline:12px}.ooc-discovery-card{grid-template-columns:1fr;margin-top:-15px}.ooc-discovery-content{padding:20px 18px}.ooc-discovery-content h2{font-size:clamp(1.8rem,6.2vw,2.7rem)}.ooc-promo{min-height:150px;padding:18px 25px;flex-direction:row;align-items:center}.ooc-promo p{margin:0;width:auto}.ooc-promo-script{font-size:1.6rem}.ooc-discovery-form{grid-template-columns:1fr}.ooc-search-button{width:100%}.ooc-main-search{width:100%}}
+@media(max-width:380px){.ooc-brand{font-size:.87rem}.ooc-menu{padding:6px}.ooc-discovery-content{padding-inline:13px}.ooc-filter-pills button{padding:0 11px}}
+@media(prefers-reduced-motion:reduce){.ooc-hero *,.ooc-discovery-card *{animation:none!important;transition:none!important}}
