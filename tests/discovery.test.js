@@ -1,7 +1,7 @@
 "use strict";
 const test=require("node:test");
 const assert=require("node:assert/strict");
-const {filterListings}=require("../app.js");
+const {filterListings}=require("../public/app.js");
 
 const listings=[
   {name:"Istanbul Church",city:"İstanbul",country:"Türkiye",description:"Welcome",

@@ -4,10 +4,17 @@
 
 A global church discovery and community project. This repository now includes an early-stage responsive static web experience and a proposed technical foundation.
 
-## Run locally
-- Open `index.html` in a browser to view the static prototype.
-- Run `npm run check` with Node 20+ to run syntax and discovery logic tests.
-- For a local server use any static HTTP server; `npx serve . -l 4173` uses an external package and requires network access.
+## Cloudflare Workers deployment
+
+Static assets are served **only** from `./public/`. Wrangler uses the checked-in `wrangler.jsonc`, so neither `node_modules/`, project documents, tests nor environment files can be published accidentally.
+
+- **Build command:** `npm run build` (checks public files; no compilation required).
+- **Deploy command:** `npx wrangler deploy` (or `npm run deploy`).
+- **Cloudflare dashboard output directory:** `public` if an output directory is requested. The definitive directory is `assets.directory` in `wrangler.jsonc`.
+- **Local preview:** `npm run preview` (requires dependencies installed).
+- **Quality:** `npm run check` checks browser JS, site asset isolation and tests.
+
+For locally opening the page, use `public/index.html` or serve `public/` with any static file server. The project requires no runtime API credentials to host this initial discovery site. Avoid using the repository root `.` as your public output directory.
 
 ## Status and safeguards
 - This is **not a live church directory**. Verified churches, service schedules and actual live streams have **not yet been loaded**.

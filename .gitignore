@@ -5,3 +5,6 @@ node_modules/
 .DS_Store
 coverage/
 dist/
+.wrangler/
+.dev.vars
+.dev.vars.*

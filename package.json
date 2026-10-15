@@ -1,14 +1,19 @@
 {
   "name": "oneonlinechurch",
-  "private": true,
   "version": "0.1.0",
-  "description": "Verified church discovery foundation",
+  "private": true,
+  "description": "Verified global church discovery website",
   "scripts": {
     "test": "node --test",
-    "check": "node --check app.js && npm test",
-    "start": "npx serve . -l 4173"
+    "check": "node --check public/app.js && node scripts/check-public-assets.cjs && npm test",
+    "build": "node scripts/check-public-assets.cjs",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "4.151.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   }
 }
