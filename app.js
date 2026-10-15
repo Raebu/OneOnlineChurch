@@ -1,13 +1,22 @@
 "use strict";
 const listings=[]; // No fictitious churches or streams are published.
+// Use the same locale-independent, accent-tolerant search key for input and listings.
+function searchKey(value){
+  return String(value||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\u0131/g,"i");
+}
 function filterListings(items,criteria){
-  const query=criteria.query.trim().toLocaleLowerCase();
-  return items.filter(item=>
-    (!query||[item.name,item.city,item.country,item.description].some(v=>String(v||"").toLocaleLowerCase().includes(query)))&&
-    (!criteria.language||item.languages.includes(criteria.language))&&
-    (!criteria.tradition||item.tradition===criteria.tradition)&&
-    (!criteria.format||item.format===criteria.format)
-  );
+  const query=searchKey(criteria.query).trim();
+  return items.filter(item=>{
+    const languages=Array.isArray(item.languages)?item.languages:[];
+    const searchable=[item.name,item.city,item.country,item.description,item.tradition,...languages];
+    const formatMatches=!criteria.format||item.format===criteria.format||(
+      item.format==="hybrid"&&(criteria.format==="online"||criteria.format==="in-person")
+    );
+    return (!query||searchable.some(value=>searchKey(value).includes(query)))&&
+      (!criteria.language||languages.includes(criteria.language))&&
+      (!criteria.tradition||item.tradition===criteria.tradition)&&
+      formatMatches;
+  });
 }
 if(typeof document!=="undefined"){
   const search=document.getElementById("search");
@@ -26,6 +35,20 @@ if(typeof document!=="undefined"){
   const mobile=document.getElementById("mobile-nav");
   toggle.addEventListener("click",()=>{const isOpen=toggle.getAttribute("aria-expanded")==="true";toggle.setAttribute("aria-expanded",String(!isOpen));mobile.hidden=isOpen});
   mobile.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mobile.hidden=true;toggle.setAttribute("aria-expanded","false")}));
+  // Reset an open mobile menu when the desktop breakpoint becomes active.
+  window.addEventListener("resize",()=>{
+    if(window.innerWidth>1050){
+      mobile.hidden=true;
+      toggle.setAttribute("aria-expanded","false");
+    }
+  });
+  document.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&!mobile.hidden){
+      mobile.hidden=true;
+      toggle.setAttribute("aria-expanded","false");
+      toggle.focus();
+    }
+  });
   document.getElementById("year").textContent=new Date().getFullYear();
   render();
 }
