@@ -263,3 +263,9 @@
     padding-top:126px;
   }
 }
+
+/* Polished icons match the reference without relying on font glyphs. */
+.ooc-stat-icon{width:27px;height:27px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.ooc-stat-icon svg{width:26px;height:26px;display:block}
+.ooc-search-icon{width:17px;height:17px;transform:none;display:block;flex:none}
+.ooc-top-search:focus-within input,.ooc-main-search:focus-within input{outline:0}
