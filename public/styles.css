@@ -5,3 +5,40 @@
 @media (min-width:1051px){.mobile-nav{display:none!important}}
 /* Text on the dark church onboarding section must meet normal-text contrast. */
 .church-section .small-note{color:#d4ded9!important}
+
+
+/* OneOnlineChurch approved brand: header and first-screen hero only */
+:root{--ink:#0C0F12;--ivory:#F7F4EE;--gold:#D4A24C}
+.site-header{height:86px;background:#050D1B;border-bottom:1px solid #21354C;padding-inline:clamp(18px,3.5vw,58px)}
+.site-header .brand{gap:10px;font-weight:800;letter-spacing:-.065em;font-size:clamp(1.04rem,1.55vw,1.5rem);color:#38BDF8}
+.site-header .brand img{width:48px;height:48px;flex:none;filter:drop-shadow(0 0 9px #116EF66b)}
+.site-header .nav a{color:#F7F4EE;font-size:.9rem;font-weight:550}
+.site-header .nav a:hover{color:#38BDF8}
+.site-header .header-cta{background:#2563EB;border:1px solid #3B82F6;color:#fff;border-radius:13px;padding:12px 20px;font-weight:700}
+.branded-hero{min-height:690px;background:radial-gradient(ellipse at 70% -5%,#17428D70,transparent 39%),radial-gradient(ellipse at 35% 28%,#072447AA,transparent 53%),#030B18;isolation:isolate}
+.branded-hero .hero-stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1px 1px at 8% 18%,#fff9 98%,transparent),radial-gradient(1px 1px at 13% 55%,#c5d9ff 98%,transparent),radial-gradient(2px 2px at 45% 15%,#fff8 98%,transparent),radial-gradient(1px 1px at 61% 35%,#fff8 98%,transparent),radial-gradient(1px 1px at 86% 17%,#fff9 98%,transparent),radial-gradient(1px 1px at 94% 56%,#fff9 98%,transparent),radial-gradient(1px 1px at 73% 82%,#fff9 98%,transparent),radial-gradient(1px 1px at 36% 73%,#fff9 98%,transparent);background-size:267px 227px;opacity:.65;z-index:-1}
+.branded-hero .hero-grid{min-height:610px;max-width:1480px;grid-template-columns:minmax(0,1.06fr) minmax(340px,.94fr);padding:75px clamp(24px,5vw,75px) 70px;gap:20px}
+.branded-hero .hero-copy{position:relative;z-index:3}
+.branded-hero .eyebrow{color:#B9CAE3;font-size:.7rem;letter-spacing:.2em;margin-bottom:30px}
+.branded-hero .gold-line{background:#D4A24C}
+.branded-hero h1{font-size:clamp(3.3rem,5.8vw,6.4rem);font-weight:650;line-height:1.04;letter-spacing:-.065em;white-space:normal;margin-bottom:24px;color:#F7F4EE}
+.branded-hero h1 .blue-word{color:#38BDF8;background:linear-gradient(105deg,#4DDAFF,#2381FF 88%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.branded-hero h1 .hero-invite{font-weight:350;letter-spacing:-.055em}
+.branded-hero .hero-lead{color:#D7E3EF;font-size:1.03rem;max-width:545px;line-height:1.8}
+.branded-hero .btn-gold{background:#2563EB;border-color:#478CFF;color:#fff;border-radius:10px}
+.branded-hero .btn-outline{border-radius:10px;border-color:#567293}
+.branded-hero .hero-disclaimer{color:#ABC1D6}
+.branded-hero .pulse-dot{background:#38BDF8}
+.branded-hero .hero-emblem{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;z-index:2}
+.branded-hero .hero-emblem img{width:min(35vw,460px);max-width:100%;height:auto;filter:drop-shadow(0 0 34px #1170E577);animation:float-emblem 9s ease-in-out infinite}
+.branded-hero .hero-emblem-caption{font-size:.7rem;letter-spacing:.26em;font-weight:650;color:#C2DDF8;margin-top:6px;text-align:center}
+.branded-hero .hero-emblem-caption span{color:#E6AE54;margin-inline:9px}
+.branded-hero .hero-earth{position:absolute;inset:auto -12% -310px 24%;height:530px;z-index:-1;pointer-events:none}
+.branded-hero .earth-horizon{position:absolute;inset:0;border-radius:50% 50% 0 0 / 38% 38% 0 0;transform:rotate(-8deg);background:radial-gradient(ellipse at 59% 1%,#FFF4C0 0%,#E5AB59 1.5%,#3C91F7 4%,#0E397C 9%,#06142D 28%,transparent 65%);box-shadow:0 -12px 44px #1479E077}
+.branded-hero .earth-glow{position:absolute;top:-60px;left:47%;width:220px;height:150px;background:radial-gradient(ellipse,#FDF0C399,#FFAD4D66 15%,transparent 66%);filter:blur(10px)}
+.branded-hero .hero-bottom{z-index:2;border-top:1px solid #38618B44;color:#AEC7E6}
+.branded-hero .hero-bottom a{color:#E9C47F}
+@keyframes float-emblem{50%{transform:translateY(-9px)}}
+@media(max-width:1050px){.branded-hero .hero-grid{grid-template-columns:1fr;gap:4px;padding-top:65px}.branded-hero .hero-emblem img{width:min(56vw,390px)}.branded-hero .hero-emblem{padding-top:10px}.branded-hero .hero-earth{inset:auto -35% -260px 5%;height:420px}.branded-hero h1{font-size:clamp(3.2rem,7.7vw,5.5rem)}}
+@media(max-width:700px){.site-header{height:74px}.site-header .brand img{width:38px;height:38px}.branded-hero .hero-grid{padding:58px 22px 50px}.branded-hero h1{font-size:clamp(3.05rem,10.6vw,4.5rem)}.branded-hero .hero-emblem img{width:min(74vw,340px)}.branded-hero .hero-emblem-caption{font-size:.52rem}.branded-hero .hero-earth{inset:auto -80% -210px -25%;height:345px}.branded-hero .hero-bottom{padding-inline:22px}.branded-hero .hero-bottom a{display:none}}
+@media(prefers-reduced-motion:reduce){.branded-hero .hero-emblem img{animation:none}}
