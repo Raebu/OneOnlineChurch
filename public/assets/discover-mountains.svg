@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="430" viewBox="0 0 700 430" role="img" aria-label="Sunlit mountain landscape">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2=".35" y2="1"><stop stop-color="#60749a"/><stop offset=".39" stop-color="#c697a1"/><stop offset=".63" stop-color="#efb583"/><stop offset="1" stop-color="#263552"/></linearGradient>
+ <radialGradient id="sun"><stop stop-color="#fff2d1"/><stop offset=".32" stop-color="#ffc69a" stop-opacity=".9"/><stop offset="1" stop-color="#d7a1a3" stop-opacity="0"/></radialGradient>
+ <linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7785a0"/><stop offset="1" stop-color="#26385e"/></linearGradient>
+ <linearGradient id="near" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#344c75"/><stop offset="1" stop-color="#101e39"/></linearGradient>
+</defs>
+<rect width="700" height="430" fill="url(#sky)"/>
+<circle cx="456" cy="187" r="205" fill="url(#sun)"/><circle cx="456" cy="186" r="31" fill="#ffe2b5" opacity=".68"/>
+<path d="M0 225 Q135 212 240 223 T467 230 T700 205" stroke="#ffe2ba" opacity=".45" fill="none" stroke-width="3"/>
+<path d="M0 281 64 255 116 269 210 211 261 254 342 215 397 263 466 209 555 267 632 227 700 263V430H0Z" fill="#8394a9" opacity=".6"/>
+<path d="M0 302 89 250 137 269 252 205 314 251 382 232 459 276 540 219 623 264 700 238V430H0Z" fill="url(#far)"/>
+<path d="M210 234 252 205 289 231 265 224 246 227 230 223Z M517 244 540 219 566 242 548 235 538 237Z" fill="#e3dfdf" opacity=".66"/>
+<path d="M0 351 76 301 166 327 256 281 364 337 461 284 545 334 627 294 700 318V430H0Z" fill="url(#near)"/>
+<path d="M0 378 90 342 199 371 286 341 378 366 512 330 618 355 700 341V430H0Z" fill="#152540"/>
+<rect width="700" height="430" fill="#11193b" opacity=".21"/>
+</svg>
