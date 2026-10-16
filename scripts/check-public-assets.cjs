@@ -11,7 +11,7 @@ assert.equal(publicDir,path.join(root,"public"));
 const expectedRoot=["index.html","styles.css","app.js","privacy.html","accessibility.html","safeguarding.html","assets"];
 const rootItems=fs.readdirSync(publicDir,{withFileTypes:true});
 assert.deepEqual(rootItems.map(x=>x.name).sort(),expectedRoot.sort(),"Only approved public files and assets may be deployed");
-const expectedImages=["brand-globe.webp","earth-sunrise.webp","discover-mountains.svg"];
+const expectedImages=["brand-globe.webp","earth-sunrise.webp"];
 const imageDir=path.join(publicDir,"assets");
 const images=fs.readdirSync(imageDir,{withFileTypes:true});
 assert.deepEqual(images.map(x=>x.name).sort(),expectedImages.sort(),"Only approved brand artwork may be deployed");
@@ -46,7 +46,8 @@ for(const needed of ["./styles.css","./app.js","./privacy.html","./accessibility
  assert.ok(html.includes(needed),"Missing public link: "+needed);
 }
 assert.ok(css.includes("./assets/earth-sunrise.webp"),"Hero must use actual Earth artwork");
-assert.ok(css.includes("./assets/discover-mountains.svg"),"Promo must use landscape illustration");
+assert.ok(css.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792151689/mountains_OOC.png"),"Promo must use the approved Cloudinary mountain photograph");
+assert.ok(!css.includes("./assets/discover-mountains.svg"),"Legacy mountain drawing must not be referenced");
 assert.ok(!html.includes("brand-icon.svg"),"Retired temporary SVG logo is referenced");
 assert.ok(html.includes("id=\"directory-search\"")&&html.includes("id=\"signin-dialog\""),"First screen controls required");
 console.log("PASS: Workers publishes "+(rootItems.length-1)+" website files plus "+images.length+" approved image assets");
