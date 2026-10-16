@@ -55,4 +55,12 @@ assert.ok(css.includes(".ooc-promo-image"),"Promo photo must have its own visibl
 assert.ok(!css.includes("./assets/discover-mountains.svg"),"Legacy mountain drawing must not be referenced");
 assert.ok(!html.includes("brand-icon.svg"),"Retired temporary SVG logo is referenced");
 assert.ok(html.includes("id=\"directory-search\"")&&html.includes("id=\"signin-dialog\""),"First screen controls required");
+assert.ok(html.includes('class="ooc-portal-grid"')&&html.includes('class="ooc-family-features"'),"Five-card gateway and family overview must remain present");
+assert.equal((html.match(/class="ooc-portal-card ooc-portal-card--/g)||[]).length,5,"Exactly five navigation cards required");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172561/mountains2_OOC.png"),"Missing approved Cloudinary art: explore");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172509/praise_OOC.png"),"Missing approved Cloudinary art: live");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172496/bible_OOC.png"),"Missing approved Cloudinary art: sermons");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172495/friend_group_OOC.png"),"Missing approved Cloudinary art: community");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172505/church_OOC.png"),"Missing approved Cloudinary art: churches");
+assert.ok(css.includes(".ooc-portal-grid")&&css.includes(".ooc-family-inner"),"New page sections must have responsive styling");
 console.log("PASS: Workers publishes "+(rootItems.length-1)+" website files plus "+images.length+" approved image assets");
