@@ -47,7 +47,10 @@ for(const needed of ["./styles.css","./app.js","./privacy.html","./accessibility
 }
 assert.ok(css.includes("./assets/earth-sunrise.webp"),"Hero must use actual Earth artwork");
 assert.ok(html.includes('<img class="ooc-promo-image" src="https://res.cloudinary.com/u7dpgaxh/image/upload/v1792151689/mountains_OOC.png"'),"Promo must visibly render the approved Cloudinary photograph");
-assert.ok(css.includes("object-position:78% center"),"Panoramic photo focal area must remain visible in narrow promo cards");
+assert.ok(html.includes('<div class="ooc-discovery-card">\n    <img class="ooc-promo-image"'),"Mountain panorama must be a direct full-width discovery-card layer");
+assert.ok(css.includes(".ooc-discovery-card > .ooc-promo-image"),"Mountain panorama must cover the entire discovery card, not just the narrow promo section");
+assert.ok(css.includes("object-fit:cover;object-position:50% 52%"),"Wide panorama must fill the whole discovery card");
+assert.ok(css.includes(".ooc-discovery-card::before"),"Text gradient over the wide photo is required");
 assert.ok(css.includes(".ooc-promo-image"),"Promo photo must have its own visible image layer");
 assert.ok(!css.includes("./assets/discover-mountains.svg"),"Legacy mountain drawing must not be referenced");
 assert.ok(!html.includes("brand-icon.svg"),"Retired temporary SVG logo is referenced");
