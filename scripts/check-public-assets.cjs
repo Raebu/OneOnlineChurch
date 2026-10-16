@@ -63,4 +63,19 @@ assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v17921
 assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172495/friend_group_OOC.png"),"Missing approved Cloudinary art: community");
 assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172505/church_OOC.png"),"Missing approved Cloudinary art: churches");
 assert.ok(css.includes(".ooc-portal-grid")&&css.includes(".ooc-family-inner"),"New page sections must have responsive styling");
+const js=fs.readFileSync(path.join(publicDir,"app.js"),"utf8");
+
+assert.ok(html.includes('id="ooc-regions-track"')&&html.includes('id="ooc-movement-title"'),"World faith gallery and movement banner must exist");
+assert.equal((html.match(/class="ooc-region-card ooc-region-card--/g)||[]).length,7,"Gallery must contain five initial cards and two additional browsable cards");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792173898/global_network_banner_OOC.webp"),"Movement banner must use approved Cloudinary globe artwork");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172495/cathedral_OOC.png"),"Missing approved regional Cloudinary art: europe");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172495/arms_up_OOC.png"),"Missing approved regional Cloudinary art: africa");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172505/mountain_lake_OOC.png"),"Missing approved regional Cloudinary art: americas");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172504/china_lanterns_OOC.png"),"Missing approved regional Cloudinary art: asia");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172496/friendship_group_OOC.png"),"Missing approved regional Cloudinary art: family");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172495/friend_group_OOC.png"),"Missing approved regional Cloudinary art: cultures");
+assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v1792172509/praise_OOC.png"),"Missing approved regional Cloudinary art: worship");
+assert.ok(css.includes("grid-auto-columns:calc((100% - 4 * var(--ooc-region-gap))/5)"),"Desktop carousel must show five cards");
+assert.ok(css.includes(".ooc-movement-banner")&&css.includes(".ooc-region-card"),"New world sections need responsive styling");
+assert.ok(js.includes('regionNext.addEventListener("click"'),"Carousel arrows must have actual handlers");
 console.log("PASS: Workers publishes "+(rootItems.length-1)+" website files plus "+images.length+" approved image assets");

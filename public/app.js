@@ -60,6 +60,37 @@ if(typeof document!=="undefined"){
  document.addEventListener("keydown",event=>{
   if(event.key==="Escape"&&!mobile.hidden){mobile.hidden=true;toggle.setAttribute("aria-expanded","false");toggle.focus()}
  });
+ // Browsable regional inspiration: arrows move through real additional cards,
+ // while the directory itself remains empty until churches are verified.
+ const regionsTrack=document.getElementById("ooc-regions-track");
+ const regionPrev=document.getElementById("ooc-regions-prev");
+ const regionNext=document.getElementById("ooc-regions-next");
+ if(regionsTrack && regionPrev && regionNext){
+   const syncRegions=()=>{
+     const max=Math.max(0,regionsTrack.scrollWidth-regionsTrack.clientWidth);
+     regionPrev.disabled=regionsTrack.scrollLeft<=2;
+     regionNext.disabled=regionsTrack.scrollLeft>=max-2;
+   };
+   const moveRegion=(direction)=>{
+     const first=regionsTrack.querySelector(".ooc-region-card");
+     if(!first)return;
+     const gap=parseFloat(getComputedStyle(regionsTrack).columnGap)||0;
+     const amount=(first.getBoundingClientRect().width+gap)*direction;
+     const reduced=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+     regionsTrack.scrollBy({left:amount,behavior:reduced?"auto":"smooth"});
+   };
+   regionPrev.addEventListener("click",()=>moveRegion(-1));
+   regionNext.addEventListener("click",()=>moveRegion(1));
+   regionsTrack.addEventListener("scroll",syncRegions,{passive:true});
+   window.addEventListener("resize",syncRegions);
+   syncRegions();
+   regionsTrack.querySelectorAll("[data-region-search]").forEach(card=>{
+     card.addEventListener("click",()=>{
+       search.value=card.dataset.regionSearch;
+       render();
+     });
+   });
+ }
  const signin=document.getElementById("signin-dialog");
  document.getElementById("signin-trigger").addEventListener("click",()=>signin.showModal());
  document.getElementById("signin-close").addEventListener("click",()=>signin.close());
