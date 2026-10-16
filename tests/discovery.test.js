@@ -36,3 +36,9 @@ test("online or in-person filters also match hybrid events",()=>{
 test("empty catalogue never invents matches",()=>{
   assert.deepEqual(filterListings([],criteria()),[]);
 });
+
+test("continent discovery terms remain ordinary text queries until verified data exists",()=>{
+  assert.equal(filterListings(listings,criteria({query:"Europe"})).length,0);
+  assert.equal(filterListings(listings,criteria({query:"Africa"})).length,0);
+  assert.equal(filterListings([],criteria({query:"Asia"})).length,0);
+});
