@@ -78,4 +78,15 @@ assert.ok(html.includes("https://res.cloudinary.com/u7dpgaxh/image/upload/v17921
 assert.ok(css.includes("grid-auto-columns:calc((100% - 4 * var(--ooc-region-gap))/5)"),"Desktop carousel must show five cards");
 assert.ok(css.includes(".ooc-movement-banner")&&css.includes(".ooc-region-card"),"New world sections need responsive styling");
 assert.ok(js.includes('regionNext.addEventListener("click"'),"Carousel arrows must have actual handlers");
+// The approved page ends immediately after the global movement banner.
+// Do not reintroduce the older long-form placeholder sections.
+assert.ok(html.includes("</section>\n</main><footer>"),"Footer must follow immediately after the movement banner");
+for(const old of ["class=\"section live-section\"","class=\"section sermons-section\"","class=\"section community-section\"","class=\"section church-section\""]){
+ assert.ok(!html.includes(old),"Old below-banner section must stay removed: "+old);
+}
+for(const id of ["live","sermons","community","churches"]){
+ assert.ok(html.includes('id="'+id+'" class="ooc-portal-card'),"Current navigation must target an existing gateway card: "+id);
+}
+assert.ok(html.includes('id="feature-dialog"')&&js.includes('featureDialog.showModal()'),"Planned feature cards must give honest interactive feedback");
+assert.equal((html.match(/<footer>/g)||[]).length,1,"Keep exactly one footer");
 console.log("PASS: Workers publishes "+(rootItems.length-1)+" website files plus "+images.length+" approved image assets");

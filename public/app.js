@@ -91,6 +91,29 @@ if(typeof document!=="undefined"){
      });
    });
  }
+ // Features beyond the current website prototype are intentionally unavailable.
+ // Keep the remaining navigation honest after removing the old placeholder sections.
+ const featureDialog=document.getElementById("feature-dialog");
+ const featureHeading=document.getElementById("feature-dialog-title");
+ const featureCopy=document.getElementById("feature-dialog-description");
+ const featureDescriptions={
+   live:["Live worship","Verified church broadcasts and schedules are being prepared. There are no confirmed live services available yet."],
+   sermons:["Sermon library","The searchable sermon library is still being prepared. No recordings have been published yet."],
+   community:["Community & fellowship","Safe and moderated fellowship features are being developed and are not accepting members yet."],
+   churches:["For churches","Church onboarding and verification are being prepared. There is not yet a public registration service."]
+ };
+ document.querySelectorAll("[data-upcoming-feature]").forEach(link=>{
+   link.addEventListener("click",event=>{
+     event.preventDefault();
+     const content=featureDescriptions[link.dataset.upcomingFeature];
+     if(!content)return;
+     featureHeading.textContent=content[0];
+     featureCopy.textContent=content[1];
+     featureDialog.showModal();
+   });
+ });
+ document.getElementById("feature-dialog-close").addEventListener("click",()=>featureDialog.close());
+ document.getElementById("feature-dialog-done").addEventListener("click",()=>featureDialog.close());
  const signin=document.getElementById("signin-dialog");
  document.getElementById("signin-trigger").addEventListener("click",()=>signin.showModal());
  document.getElementById("signin-close").addEventListener("click",()=>signin.close());
